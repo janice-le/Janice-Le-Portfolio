@@ -1,7 +1,3 @@
-function setup() {
- 
-  createCanvas(windowWidth, windowHeight);
-
 let paddle;
 let ball;
 let obstacles = [];
@@ -223,11 +219,3 @@ function createRestartButton() {
     setupGame();
   });
 }
-
-  function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-
-}
-
-
-

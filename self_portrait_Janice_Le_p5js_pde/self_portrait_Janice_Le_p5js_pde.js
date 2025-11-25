@@ -1,6 +1,6 @@
 function setup() {
  
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1000, 1000);
   background('#cac9e5');
   noStroke()
   
@@ -132,10 +132,5 @@ function setup() {
 
 
 function draw() {
-
-}
-
- function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
 
 }

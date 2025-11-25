@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1000, 1000);
   background(500);
   
 }
@@ -18,10 +18,3 @@ noStroke();
   circle(1000, 1000, mouseX, mouseY);
 
 }
-
- function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-
-}
-
-
