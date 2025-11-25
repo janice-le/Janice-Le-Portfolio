@@ -54,6 +54,22 @@ ul li a {
 ul li a:hover {
   background-color: #6E9FC1;
 }
+
+.iframe-container {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+iframe {
+  border: none;
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto;
+}
+
 </style>
 </head>
 <body>
@@ -75,59 +91,42 @@ ul li a:hover {
 <head>
 <style>
 body  {
-  background-image: url("images/gradient1.jpg");
+  background-image: url("images/gradient.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 </style>
 </head>
 
-<html>
-<head>
-<style>
-div.a {
-  text-align: center;
-}
-
-</style>
-</head>
-<body>
-
-<div class="a">
-<h1>Glitched Space</h1>
-<p>We are humans with beautiful physical features that further authenticate our natural flesh, but skin and bones are the layer to the soul many seek to satisfy their human desires.</p>
-<p>We love and cherish those created from pure physique, every part of the human is wonderful and lovely. From the very beginning, humans painted others as desirable and untouchable deities, and that has not changed with technology touching the human works.</p>
-​<p>We are human still then and now, how we portray and capture it is how we can still partake in creative arts.</p>
+<div class="iframe-container">
+  <h2>Title of Self Portrait</h2>
+  <p>Artist Statement</p>
+  <iframe 
+    src="self_portrait_Janice_Le_p5js_pde/index.html"
+    scrolling="no"
+    title="Self Portrait">
+  </iframe>
 </div>
 
-</body>
-</html>
+<div class="iframe-container">
+  <h2>Title of Drawing Tool</h2>
+  <p>Artist Statement</p>
+  <iframe 
+    src="interactive_drawing_tool/index.html"
+    scrolling="no"
+    title="Drawing Tool">
+  </iframe>
+</div>
 
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.responsive {
-  max-width: 100%;
-  height: auto;
-}
-
-img {
-  display: block;
-  margin: auto;
-}
-
-</style>
-</head>
-<body>
-	<br>
-	<hr>
-		<br>
-<img src="images/creation.png" alt="Creation of Adam" class="responsive" width="1000" height="600">
-	<br>
-<img src="images/venus.png" alt="Birth of Venus" class="responsive" width="1000" height="600">
-	<br>
-<img src="images/primavera.png" alt="Primavera" class="responsive" width="1000" height="600">
+<div class="iframe-container">
+  <h2>Title of One Button Game</h2>
+  <p>Artist Statement</p>
+  <iframe 
+    src="p5js_kirby_eater_game_Janice_Le/index.html"
+    scrolling="no"
+    title="One Button Game">
+  </iframe>
+</div>
 
 </body>
 </html>
