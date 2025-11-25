@@ -19,3 +19,9 @@ noStroke();
 
 }
 
+ function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+
+}
+
+
