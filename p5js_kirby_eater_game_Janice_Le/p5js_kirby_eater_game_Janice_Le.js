@@ -32,10 +32,30 @@ function preload() {
   ballImage = loadImage("images/kirby.png");
 }
 
+// make canvas match iframe size instead of fixed 1000x550
 function setup() {
-  // Fixed canvas
-  createCanvas(1000, 550);
+  createCanvas(windowWidth, windowHeight);
   setupGame();
+}
+
+// keep canvas + button centered when iframe/page resizes
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+
+  // Re-center paddle vertically near bottom of new height
+  if (paddle) {
+    paddle.y = height - 30;
+  }
+
+  // Re-center ball start height just above paddle if we are resetting later
+  if (ball && gameState === "playing") {
+    // Do nothing special to ball; it keeps its position
+  }
+
+  // Keep restart button centered after resize
+  if (restartButton) {
+    restartButton.position(width / 2 - 50, height / 2 + 40);
+  }
 }
 
 function setupGame() {
@@ -75,7 +95,8 @@ function setupGame() {
       overlapping = false;
       newObstacle = {
         x: random(30, width - 30),
-        y: random(50, 300), // upper half of canvas
+        // 🔹 use a portion of the current height instead of a fixed 300
+        y: random(50, height * 0.55), // upper part of canvas
         w: 50,
         h: 40,
         img: random(obstacleImages)
@@ -98,7 +119,7 @@ function setupGame() {
 }
 
 function draw() {
-  // Draw fixed-size background
+  // Draw background to fill current canvas size
   imageMode(CORNER);
   image(bgImage, 0, 0, width, height);
 
@@ -111,10 +132,10 @@ function draw() {
     return;
   }
 
-  // Paddle follows mouse
+  // Paddle follows mouse (clamped to canvas size)
   paddle.x = constrain(mouseX, paddle.w / 2, width - paddle.w / 2);
 
-  // Draw paddle (no outline, no rotation)
+  // Draw paddle
   push();
   translate(paddle.x, paddle.y);
   noStroke();
