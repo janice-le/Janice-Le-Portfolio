@@ -224,3 +224,10 @@ function createRestartButton() {
   });
 }
 
+  function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+
+}
+
+
+
