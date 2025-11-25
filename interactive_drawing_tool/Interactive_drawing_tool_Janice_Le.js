@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(1000, 1000);
+  createCanvas(windowWidth, windowHeight);
   background(500);
   
 }
@@ -18,3 +18,4 @@ noStroke();
   circle(1000, 1000, mouseX, mouseY);
 
 }
+
